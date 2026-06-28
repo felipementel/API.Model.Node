@@ -9,6 +9,7 @@ import {
 import { InMemoryUserRepository } from './adapters/outbound/repositories/in-memory-user-repository.js';
 import { healthRoutes } from './adapters/inbound/http/routes/health-routes.js';
 import { userRoutes } from './adapters/inbound/http/routes/user-routes.js';
+import { rootRoutes } from './adapters/inbound/http/routes/root-routes.js';
 import { UserService } from './application/services/user-service.js';
 
 export interface CreateAppOptions {
@@ -47,6 +48,7 @@ export async function createApp(options: CreateAppOptions = {}): Promise<Fastify
 
   await app.register(healthRoutes, { userService });
   await app.register(userRoutes, { userService });
+  await app.register(rootRoutes);
 
   return app;
 }
