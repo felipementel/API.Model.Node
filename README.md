@@ -24,6 +24,12 @@ node --version
 npm --version
 ```
 
+## Atualizar todas as dependencias
+
+```powershell
+npx npm-check-updates -u
+```
+
 ## Arquitetura
 
 Estrutura do projeto:
