@@ -35,7 +35,10 @@ RUN npm run build
 FROM node:24-alpine AS runtime
 
 RUN addgroup -S appgroup && \
-    adduser -S appuser -G appgroup
+    adduser -S appuser -G appgroup && \
+    rm -rf /usr/local/lib/node_modules/npm \
+    /usr/local/bin/npm \
+    /usr/local/bin/npx
 
 WORKDIR /app
 
