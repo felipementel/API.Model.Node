@@ -100,6 +100,14 @@ npm start
 npm test
 ```
 
+## Pre-checks antes do commit
+
+Na raiz do repositorio, execute a verificacao de vulnerabilidades com Trivy:
+
+```powershell
+trivy fs --scanners vuln --format table --dependency-tree .
+```
+
 Resultado esperado no estado atual do projeto:
 
 - testes unitarios do servico
