@@ -6,6 +6,7 @@ import {
   serializerCompiler,
   validatorCompiler
 } from 'fastify-type-provider-zod';
+import pkg from '../package.json' with { type: 'json' };
 import { InMemoryUserRepository } from './adapters/outbound/repositories/in-memory-user-repository.js';
 import { healthRoutes } from './adapters/inbound/http/routes/health-routes.js';
 import { userRoutes } from './adapters/inbound/http/routes/user-routes.js';
@@ -32,8 +33,8 @@ export async function createApp(options: CreateAppOptions = {}): Promise<Fastify
   await app.register(swagger, {
     openapi: {
       info: {
-        title: 'Usuarios API Node - Canal DEPLOY',
-        version: '0.1.0',
+        title: 'Usuarios API Node',
+        version: pkg.version,
         description: 'CRUD de usuarios com persistencia em memoria.'
       }
     },
