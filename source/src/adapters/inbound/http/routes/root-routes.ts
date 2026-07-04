@@ -1,6 +1,7 @@
 import type { FastifyPluginAsync } from 'fastify';
+import pkg from '../../../../../package.json' with { type: 'json' };
 
-const VERSION = '0.1.0';
+const VERSION = pkg.version;
 
 const SCALAR_HTML = `<!DOCTYPE html>
 <html lang="pt-BR">
