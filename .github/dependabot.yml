@@ -3,7 +3,9 @@ updates:
   - package-ecosystem: "npm"
     directory: "/source"
     schedule:
-      interval: "weekly"
+      interval: "cron"
+      cron: "0 11 * * 1"
+      timezone: "America/Sao_Paulo"
     open-pull-requests-limit: 10
     labels:
       - "dependencies"
@@ -13,9 +15,11 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "cron"
+      cron: "0 11 * * 1"
+      timezone: "America/Sao_Paulo"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
     commit-message:
-      prefix: "ci: "
+      prefix: "[gh-actions]: "
