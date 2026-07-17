@@ -23,3 +23,15 @@ updates:
       - "dependencies"
     commit-message:
       prefix: "[gh-actions]: "
+
+  - package-ecosystem: "docker"
+    directory: "/docker"
+    schedule:
+      interval: "cron"
+      cron: "0 11 * * 1"
+      timezone: "America/Sao_Paulo"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "[dockerfile]: "
